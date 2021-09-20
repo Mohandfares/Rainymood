@@ -22,10 +22,16 @@ class PlaySoundService : Service() {
     override fun onStart(intent: Intent?, startId: Int) {
         super.onStart(intent, startId)
         mediaPlayer.start()
+        playState = true
     }
 
     override fun onDestroy() {
         super.onDestroy()
         mediaPlayer.stop()
+        playState = false
+    }
+
+    companion object {
+        var playState = false
     }
 }

@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 
 class RainyViewModel : ViewModel() {
 
-    val playState = MutableStateFlow(false)
+    val playState = MutableStateFlow(PlaySoundService.playState)
 
     fun playStateChange() {
         playState.value = !playState.value
